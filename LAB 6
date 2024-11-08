@@ -1,0 +1,93 @@
+#1.
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+# Creating two instances of the Person class
+person1 = Person("Alice", 30)
+person2 = Person("Bob", 25)
+
+# Printing the attributes of both persons
+print(f"Person 1: Name = {person1.name}, Age = {person1.age}")
+print(f"Person 2: Name = {person2.name}, Age = {person2.age}")
+
+Person 1: Name = Alice, Age = 30
+Person 2: Name = Bob, Age = 25
+
+
+
+#2.
+class Student:
+    def __init__(self, name, roll_no):
+        self.name = name
+        self.roll_no = roll_no
+
+# Creating an instance of the Student class
+student1 = Student("John", 2)
+
+# Printing the details of the student
+print(f"Student Name: {student1.name}, Roll No: {student1.roll_no}")
+
+
+Student Name: John, Roll No: 2
+
+
+#3.
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"Deposited ${amount}. New balance: ${self.balance}")
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+            print(f"Withdrew ${amount}. New balance: ${self.balance}")
+        else:
+            print("Insufficient funds!")
+
+    def check_balance(self):
+        print(f"Current balance: ${self.balance}")
+
+# Creating a bank account object
+account = BankAccount("Alice", 1000)
+
+# Performing operations
+account.deposit(500)
+account.withdraw(200)
+account.check_balance()
+
+
+Deposited $500. New balance: $1500
+Withdrew $200. New balance: $1300
+Current balance: $1300
+
+
+#4.
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print(f"Student Name: {self.name}, Age: {self.age}")
+
+# Creating instances of the Student class
+student1 = Student("Alice", 20)
+student2 = Student("Bob", 22)
+
+# Displaying the details of students
+student1.display()
+student2.display()
+
+
+Student Name: Alice, Age: 20
+Student Name: Bob, Age: 22
+
+Student Name: Alice, Age: 20
+Student Name: Bob, Age: 22
+
