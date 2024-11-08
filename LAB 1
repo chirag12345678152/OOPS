@@ -1,4 +1,5 @@
-#1.  def is_prime(number):
+#1.
+def is_prime(number):
     if number <= 1:
         return False
     for i in range(2, int(number ** 0.5) + 1):
@@ -13,7 +14,8 @@ if is_prime(num):
 else:
     print(f"{num} is not a Prime number.")
 
-#2. def is_palindrome(num):
+#2.
+def is_palindrome(num):
     return str(num) == str(num)[::-1]
 
 # Input from user
@@ -23,7 +25,8 @@ if is_palindrome(num):
 else:
     print(f"{num} is not a palindrome.")
 
-#3. def get_grade(percentage):
+#3.
+def get_grade(percentage):
     if percentage >= 90:
         return "A+"
     elif percentage >= 80:
@@ -43,7 +46,8 @@ grade = get_grade(percentage)
 print(f"The grade is: {grade}")
 
 
-#4. def add(x, y):
+#4.
+def add(x, y):
     return x + y
 
 def subtract(x, y):
