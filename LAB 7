@@ -1,0 +1,97 @@
+#1.
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+
+class Student(Person):
+    def __init__(self, name, age, student_id):
+        super().__init__(name, age)  # Inherit attributes from Person
+        self.student_id = student_id
+
+    def show_details(self):
+        self.display()  # Call display() from Person
+        print(f"Student ID: {
+
+
+Name: John Doe, Age: 20
+Student ID: S12345
+
+
+#2.
+class Vehicle:
+    def info(self):
+        print("This is a vehicle.")
+
+class Car(Vehicle):
+    def car_info(self):
+        print("This is a car.")
+
+class ElectricCar(Car):
+    def battery_info(self):
+        print("This car has a battery.")
+
+# Create an ElectricCar object
+electric_car = ElectricCar()
+electric_car.info()        # Inherited from Vehicle
+electric_car.car_info()    # Inherited from Car
+electric_car.battery_info()  # Defined in ElectricCar
+
+
+This is a vehicle.
+This is a car.
+This car has a battery.
+
+
+#3.
+class Teacher:
+    def description(self):
+        print("I am a teacher.")
+
+class Author:
+    def description(self):
+        print("I am an author.")
+
+class TutorAuthor(Teacher, Author):
+    def description(self):
+        super().description()  # Resolving conflict by calling Teacher's description
+        print("I am both a teacher and an author.")
+
+# Create a TutorAuthor object
+tutor_author = TutorAuthor()
+tutor_author.description()
+
+
+I am a teacher.
+I am both a teacher and an author.
+
+
+#4.
+class Animal:
+    def sound(self):
+        print("Animals make sound.")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks.")
+
+class Cat(Animal):
+    def sound(self):
+        print("Cat meows.")
+
+# Create objects of Dog and Cat
+dog = Dog()
+cat = Cat()
+
+# Calling sound() method from both Dog and Cat
+dog.sound()  # Dog's version of sound
+cat.sound()  # Cat's version of sound
+
+
+Dog barks.
+Cat meows.
+
+
