@@ -1,0 +1,129 @@
+#1.
+def triple(x):
+    return x * 3
+
+# Given list of integers
+numbers = [1, 2, 3, 4, 5]
+
+# Using map to triple all numbers
+tripled_numbers = list(map(triple, numbers))
+
+print("Tripled numbers:", tripled_numbers)
+
+
+#2.
+list1 = [1, 2, 3, 4, 5]
+list2 = [6, 7, 8, 9, 10]
+list3 = [11, 12, 13, 14, 15]
+
+# Using map and lambda to add corresponding elements from the three lists
+result = list(map(lambda x, y, z: x + y + z, list1, list2, list3))
+
+print("Sum of three lists:", result)
+
+
+#3.
+strings = ["hello", "world", "python"]
+
+# Using map to listify each string into a list of characters
+listified_strings = list(map(list, strings))
+
+print("Listified strings:", listified_strings)
+
+
+#4.
+bases = [2, 3, 4, 5]
+exponents = [1, 2, 3, 4]
+
+# Using map to calculate the base raised to the power of the index
+result = list(map(lambda x, y: x ** y, bases, exponents))
+
+print("List of powers:", result)
+
+
+
+#5.
+numbers = [1, 2, 3, 4, 5]
+
+# Using map to square each element
+squared_numbers = list(map(lambda x: x ** 2, numbers))
+
+print("Squared numbers:", squared_numbers)
+
+
+#6.
+sequence = "aabbccddeeff"
+
+# Convert all characters to uppercase and lowercase
+upper_case = list(map(str.upper, sequence))
+lower_case = list(map(str.lower, sequence))
+
+# Eliminate duplicates by converting to a set
+unique_upper = list(set(upper_case))
+unique_lower = list(set(lower_case))
+
+print("Uppercase characters:", unique_upper)
+print("Lowercase characters:", unique_lower)
+
+
+#7.
+list1 = [1, 2, 3, 4, 5]
+list2 = [6, 7, 8, 9, 10]
+
+# Adding corresponding elements of the lists
+sum_lists = list(map(lambda x, y: x + y, list1, list2))
+
+# Finding the difference between corresponding elements
+diff_lists = list(map(lambda x, y: x - y, list1, list2))
+
+print("Sum of lists:", sum_lists)
+print("Difference of lists:", diff_lists)
+
+
+#8.
+numbers_list = [1, 2, 3, 4]
+numbers_tuple = (5, 6, 7, 8)
+
+# Convert list and tuple of integers to list of strings
+list_of_strings = list(map(str, numbers_list))
+tuple_of_strings = list(map(str, numbers_tuple))
+
+print("List of strings:", list_of_strings)
+print("Tuple of strings:", tuple_of_strings)
+
+
+#9.
+tuple_data = (1, "20", 3, "40", 5)
+
+# Extracting specific elements and converting them to integers
+new_list = list(map(int, [tuple_data[1], tuple_data[3]]))
+
+print("New list with integers:", new_list)
+
+
+#10.
+def fibonacci(n):
+    fib = [0, 1]
+    for i in range(2, n):
+        fib.append(fib[-1] + fib[-2])
+    return fib
+
+# Get the first N Fibonacci numbers
+n = 5
+fib_numbers = fibonacci(n)
+
+# Compute the square of each Fibonacci number
+squared_fib_numbers = list(map(lambda x: x ** 2, fib_numbers))
+
+print("Squared Fibonacci numbers:", squared_fib_numbers)
+
+
+#11.
+numbers = [1, 2, 3, 4, 5]
+
+# Using map to return the numbers and summing them
+sum_of_elements = sum(map(lambda x: x, numbers))
+
+print("Sum of elements:", sum_of_elements)
+
+
