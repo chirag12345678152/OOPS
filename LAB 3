@@ -1,0 +1,73 @@
+#1.
+def is_disarium(n):
+    num_str = str(n)
+    length = len(num_str)
+    sum_of_powers = sum(int(digit) ** (index + 1) for index, digit in enumerate(num_str))
+    return sum_of_powers == n
+
+# Test the function
+num = int(input("Enter a number to check if it's a Disarium number: "))
+if is_disarium(num):
+    print(f"{num} is a Disarium number.")
+else:
+    print(f"{num} is not a Disarium number.")
+
+
+#2.
+def is_harshad(n):
+    sum_of_digits = sum(int(digit) for digit in str(n))
+    return n % sum_of_digits == 0
+
+# Test the function
+num = int(input("Enter a number to check if it's a Harshad number: "))
+if is_harshad(num):
+    print(f"{num} is a Harshad number.")
+else:
+    print(f"{num} is not a Harshad number.")
+
+
+#3.
+def is_armstrong(n):
+    num_str = str(n)
+    num_digits = len(num_str)
+    sum_of_powers = sum(int(digit) ** num_digits for digit in num_str)
+    return sum_of_powers == n
+
+# Print Armstrong numbers between 1 and 1000
+print("Armstrong numbers between 1 and 1000:")
+for num in range(1, 1001):
+    if is_armstrong(num):
+        print(num)
+
+
+#4.
+def power(x, n):
+    return x ** n
+
+# Test the function
+x = int(input("Enter the base (X): "))
+n = int(input("Enter the exponent (n): "))
+print(f"The value of {x}^{n} is: {power(x, n)}")
+
+
+#5.
+import math
+
+def nCr(n, r):
+    return math.comb(n, r)
+
+# Test the function
+n = int(input("Enter the value of n (total items): "))
+r = int(input("Enter the value of r (items chosen): "))
+print(f"The value of {n}C{r} is: {nCr(n, r)}")
+
+
+#6.
+def sum_of_digits(n):
+    return sum(int(digit) for digit in str(n))
+
+# Test the function
+num = int(input("Enter a number to calculate the sum of its digits: "))
+print(f"The sum of digits in {num} is: {sum_of_digits(num)}")
+
+
