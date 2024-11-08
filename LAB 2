@@ -1,0 +1,113 @@
+#1. 
+def fibonacci(n):
+    fib_series = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_series.append(a)
+        a, b = b, a + b
+    return fib_series
+
+# Test the function
+n = int(input("Enter the number of terms for Fibonacci series: "))
+print(f"Fibonacci series of {n} terms: {fibonacci(n)}")
+
+
+
+
+#2.
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+# Test the function
+num = int(input("Enter a number to calculate its factorial: "))
+print(f"The factorial of {num} is: {factorial(num)}")
+
+
+#3.
+def is_armstrong(n):
+    num_str = str(n)
+    num_digits = len(num_str)
+    sum_of_powers = sum(int(digit) ** num_digits for digit in num_str)
+    return sum_of_powers == n
+
+# Test the function
+num = int(input("Enter a number to check if it's an Armstrong number: "))
+if is_armstrong(num):
+    print(f"{num} is an Armstrong number.")
+else:
+    print(f"{num} is not an Armstrong number.")
+
+
+#4.
+def is_perfect(n):
+    sum_of_divisors = sum(i for i in range(1, n) if n % i == 0)
+    return sum_of_divisors == n
+
+# Test the function
+num = int(input("Enter a number to check if it's a Perfect number: "))
+if is_perfect(num):
+    print(f"{num} is a Perfect number.")
+else:
+    print(f"{num} is not a Perfect number.")
+
+
+#5.
+import math
+
+def is_strong(n):
+    sum_of_factorials = sum(math.factorial(int(digit)) for digit in str(n))
+    return sum_of_factorials == n
+
+# Test the function
+num = int(input("Enter a number to check if it's a Strong number: "))
+if is_strong(num):
+    print(f"{num} is a Strong number.")
+else:
+    print(f"{num} is not a Strong number.")
+
+
+#6.
+def multiplication_table(num, limit=10):
+    for i in range(1, limit + 1):
+        print(f"{num} x {i} = {num * i}")
+
+# Test the function
+num = int(input("Enter a number to print its multiplication table: "))
+limit = int(input("Enter the limit for the table (default is 10): ") or 10)
+multiplication_table(num, limit)
+
+
+#7.
+def multiplication_table(num, limit=10):
+    for i in range(1, limit + 1):
+        print(f"{num} x {i} = {num * i}")
+
+# Test the function
+num = int(input("Enter a number to print its multiplication table: "))
+limit = int(input("Enter the limit for the table (default is 10): ") or 10)
+multiplication_table(num, limit)
+
+
+#8.
+import math
+
+def calculate_gcd(x, y):
+    return math.gcd(x, y)
+
+def calculate_lcm(x, y):
+    return abs(x * y) // math.gcd(x, y)
+
+# Test the function
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the second number: "))
+
+gcd = calculate_gcd(num1, num2)
+lcm = calculate_lcm(num1, num2)
+
+print(f"The GCD of {num1} and {num2} is: {gcd}")
+print(f"The LCM of {num1} and {num2} is: {lcm}")
+
+
