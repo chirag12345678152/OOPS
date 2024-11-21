@@ -1,0 +1,171 @@
+Q1. 
+
+class BubbleSort:
+    def __init__(self, arr):
+        self.arr = arr
+
+    def sort(self):
+        n = len(self.arr)
+        for i in range(n):
+            for j in range(0, n-i-1):
+                if self.arr[j] > self.arr[j+1]:
+                    self.arr[j], self.arr[j+1] 1  = self.arr[j+1], self.arr[j]
+
+# Example usage:
+arr = [64, 34, 25, 12, 22, 11, 90]
+sorter = BubbleSort(arr)
+sorter.sort()
+print(arr)
+
+Q2. 
+
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+# Example usage:
+arr = [12, 11, 13, 5, 6]
+insertion_sort(arr)
+print(arr)
+
+Q3. 
+
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[min_idx] > arr[j]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+# Example usage:
+arr = [64, 25, 12, 22, 11]
+selection_sort(arr)
+print(arr)
+
+Q4.
+
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left_half = arr[:mid]
+        right_half = arr[mid:]
+
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        i = j = k = 0
+
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+
+# Example usage:
+arr = [12, 11, 13, 5, 6]
+merge_sort(arr)
+print(arr)
+
+Q5.
+
+def linear_search(arr, x):
+    for i in range(len(arr)):
+        if arr[i] == x:
+            return i
+    return -1
+
+# Example usage:
+arr = [2, 3, 4, 10, 40]
+x = 10
+result = linear_search(arr, x)
+if result != -1:
+    print("Element is present at index", str(result))
+else:
+    print("Element is not present in array")
+
+Q6.
+
+def binary_search(arr, x):
+    low = 0
+    high = len(arr) - 1
+    mid = 0
+
+    while low <= high:
+        mid = (high + low) // 2
+        if arr[mid] < x:
+            low = mid + 1
+        elif arr[mid] > x:
+            high = mid - 1
+        else:
+            return mid
+    return -1
+
+# Example usage:
+arr = [2, 3, 4, 10, 40]
+x = 10
+result = binary_search(arr, x)
+if result != -1:
+    print("Element is present at index", str(result))
+else:
+    print("Element is not present in array")
+
+Q7.
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, data):
+        if self.root is None:
+            self.root = Node(data)
+        else:
+            self._insert_recursive(self.root, data)
+
+    def _insert_recursive(self, node, data):
+        if data < node.data:
+            if node.left is None:
+                node.left = Node(data)
+            else:
+                self._insert_recursive(node.left, data)
+        else:
+            if node.right is None:
+                node.right = Node(data)
+            else:
+                self._insert_recursive(node.right, data)
+
+# Example usage:
+tree = BinaryTree()
+tree.insert(50)
+tree.insert(30)
+tree.insert(70)
+tree.insert(20)
+tree.insert(40)
+tree.insert(60)
+tree.insert(80)
+
